@@ -2,10 +2,11 @@ package com.romanstetsiuk.hibernate;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "DEPARTMENT",
-        uniqueConstraints = {@UniqueConstraint(columnNames = {DEPT_NO})})
+        uniqueConstraints = {@UniqueConstraint(columnNames = {"DEPT_NO"})})
 public class Department {
 
     private Integer deptId;
@@ -16,6 +17,7 @@ public class Department {
 
     public Department(Integer deptId, String deptName, String location) {
         this.deptId = deptId;
+        this.deptNo = "D" + this.deptId;
         this.deptName = deptName;
         this.location = location;
     }
